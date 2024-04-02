@@ -6,7 +6,10 @@ const { execSync } = require('child_process')
 require('natural-compare-lite')
 const jayson = require('jayson')
 const config = require('../config')
-
+const { parseSimpConf } = require('../lib/index')
+const simpConf = parseSimpConf("simp.yaml");
+const mapConf = simpConf.server.mapConf;
+console.log('mapConf',mapConf);
 function getHash (algorithm, str) {
   const hash = crypto.createHash(algorithm)
   hash.update(str.trim())
@@ -25,8 +28,8 @@ function executeCommand (command) {
 }
 
 // Initializing
-if (config.user && config.password) {
-  config.accounts[config.user] = config.password
+if (mapConf.user && mapConf.password) {
+  config.accounts[mapConf.user] = mapConf.password
 }
 const isConfigured = config.noLogin || Object.keys(config.accounts).length >= 1
 

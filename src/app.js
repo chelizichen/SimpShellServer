@@ -6,8 +6,8 @@ const c2k = require('koa-connect')
 const Router = require('koa-router')
 const mount = require('koa-mount')
 const path = require('path')
-const { RPCServer, isConfigured, noLogin } = require('./RPCServer')
-
+const { RPCServer, isConfigured, noLogin } = require('./server/RPCServer')
+const { NewSimpHttpServer } = require('./lib/index')
 const server = new Koa()
 server.use(bodyParser())
 server.use(async (ctx, next) => {
@@ -20,11 +20,11 @@ server.use(async (ctx, next) => {
   }
 })
 
-server.use(views(path.join(__dirname, '../views'), {
+server.use(views(path.join(__dirname, './views'), {
   extension: 'pug'
 }))
 
-server.use(mount('/static', serve(path.join(__dirname, '../static'))))
+server.use(mount('/static', serve(path.join(__dirname, './static'))))
 
 const router = new Router()
 router.get('/console', async (ctx) => {
@@ -40,5 +40,4 @@ router.post('/rpc', c2k(RPCServer.middleware()))
 
 server.use(router.routes()).use(router.allowedMethods())
 
-server.listen(3000)
-console.log('server started and listens on port 3000')
+NewSimpHttpServer(server)

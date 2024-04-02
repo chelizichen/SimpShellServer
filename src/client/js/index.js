@@ -26,18 +26,19 @@ let silentMode = false
 
 // Default banner
 let bannerMain = 'Node Web Console'
-const bannerLink = 'https://github.com/ChrisCindy/node-web-console'
+const bannerLink = 'https://github.com/chelizichen/SimpShellServer'
 let bannerExtra = `${bannerLink}\n`
 
 // Big banner
 if (!settings.isSmallWindow) {
   bannerMain =
-  '    _   __          __        _       __     __       ______                       __' +
-  '\n   / | / /___  ____/ /__     | |     / /__  / /_     / ____/___  ____  _________  / /__ ' +
- '\n  /  |/ / __ \\/ __  / _ \\    | | /| / / _ \\/ __ \\   / /   / __ \\/ __ \\/ ___/ __ \\/ / _ \\' +
-'\n / /|  / /_/ / /_/ /  __/    | |/ |/ /  __/ /_/ /  / /___/ /_/ / / / (__  ) /_/ / /  __/' +
-'\n/_/ |_/\\____/\\__,_/\\___/     |__/|__/\\___/_.___/   \\____/\\____/_/ /_/____/\\____/_/\\___/ '
-  bannerExtra = `\n${bannerLink}\n`
+  " __ _                   ___ _                 _ \n" +
+  "/ _(_)_ __ ___  _ __   / __\\ | ___  _   _  __| |\n" +
+  "\\ \\| | '_ ` _ \\| '_ \\ / /  | |/ _ \\| | | |/ _` |\n" +
+  "_\\ \\ | | | | | | |_) / /___| | (_) | |_| | (_| |\n" +
+  "\\__/_|_| |_| |_| .__/\\____/|_|\\___/ \\__,_|\\__,_|\n" +
+  "               |_|                              \n" +
+  "                                                \n" ;
 }
 
 let terminal = null
