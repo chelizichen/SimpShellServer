@@ -11,6 +11,7 @@ const { NewSimpHttpServer } = require('./lib/index')
 const server = new Koa()
 server.use(bodyParser())
 server.use(async (ctx, next) => {
+  console.log('ctx',ctx.url);
   try {
     ctx.req.body = ctx.request.body
     await next()
