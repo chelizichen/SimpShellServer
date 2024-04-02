@@ -20,13 +20,18 @@ server.use(async (ctx, next) => {
   }
 })
 
+const publicPath = '/simpshellserver'
+
 server.use(views(path.join(__dirname, './views'), {
-  extension: 'pug'
+  extension: 'pug',
 }))
 
-server.use(mount('/static', serve(path.join(__dirname, './static'))))
+server.use(mount('/simpshellserver/static', serve(path.join(__dirname, './static'))))
 
-const router = new Router()
+const router = new Router({
+  'prefix':publicPath
+})
+
 router.get('/console', async (ctx) => {
   if (isConfigured) {
     await ctx.render('index', {

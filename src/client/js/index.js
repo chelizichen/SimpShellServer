@@ -10,7 +10,7 @@ require('jquery-mousewheel')($)
 
 const settings = {
   // url: `//${window.location.hostname}:4000/`,
-  url: `/rpc`,
+  url: `/simpshellserver/rpc`,
   promptPathLength: 32,
   domain: document.domain || window.location.host,
   isSmallWindow: $(document).width() < 625
