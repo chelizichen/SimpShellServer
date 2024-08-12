@@ -88,7 +88,7 @@ const methods = {
     } else if (typeof user === 'string' && user && config.homeDirectory.user) {
       return config.homeDirectory.user
     }
-    return process.cwd()
+    return path.resolve(process.cwd(),'../../')
   },
 
   // Environment

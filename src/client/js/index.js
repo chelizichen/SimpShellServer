@@ -31,14 +31,7 @@ let bannerExtra = `${bannerLink}\n`
 
 // Big banner
 if (!settings.isSmallWindow) {
-  bannerMain =
-  " __ _                   ___ _                 _ \n" +
-  "/ _(_)_ __ ___  _ __   / __\\ | ___  _   _  __| |\n" +
-  "\\ \\| | '_ ` _ \\| '_ \\ / /  | |/ _ \\| | | |/ _` |\n" +
-  "_\\ \\ | | | | | | |_) / /___| | (_) | |_| | (_| |\n" +
-  "\\__/_|_| |_| |_| .__/\\____/|_|\\___/ \\__,_|\\__,_|\n" +
-  "               |_|                              \n" +
-  "                                                \n" ;
+  bannerMain = "Node Web Console"
 }
 
 let terminal = null

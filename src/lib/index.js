@@ -13,10 +13,10 @@ function parseSimpConf(p) {
 }
 
 function NewSimpHttpServer(ctx) {
-  const SIMP_TARGET_PORT = process.env.SIMP_TARGET_PORT;
+  const SGRID_TARGET_PORT = process.env.SGRID_TARGET_PORT;
   const conf = parseSimpConf('simp.yaml');
   const SIMP_SERVER_PORT = conf.server.port
-  const port = Number(SIMP_TARGET_PORT) || Number(SIMP_SERVER_PORT)
+  const port = Number(SGRID_TARGET_PORT) || Number(SIMP_SERVER_PORT)
   ctx.listen(port, function () {
     console.log("server started at localhost:" + port);
   });
